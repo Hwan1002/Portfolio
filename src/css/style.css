@@ -163,14 +163,18 @@ div,button,span,p,li,a{
     background: transparent;
     color: #fff;
 }
-
+/* about */
+.aboutMe h3{
+    border-bottom-color: #000000;
+}
 /* skill */
 .skills{
     background-color: #25baff;
 }
 .skills h3{
-    color:#fff;
-} 
+    color: #fff;
+    border-bottom-color: #ffffff;
+}
 .skills_all{
     padding: 4rem 1.5rem;
 }
@@ -192,11 +196,17 @@ div,button,span,p,li,a{
     width: 55px;
     height: 55px;
     aspect-ratio: auto 32 / 32;
+    transition: transform .5s ease, box-shadow .5s ease;
 }
-
+.skills_icon img:hover{
+    transform: translateY(-10px);
+}
 /* archiving */
 .archiving{
     background: #000;
+}
+.archiving h3{
+    border-bottom-color: #ffffff;
 }
 .archiving .section_content{
     flex-wrap: nowrap;
@@ -237,7 +247,9 @@ div,button,span,p,li,a{
 }
 .project h3{
     color: #fff;
+    border-bottom-color: #ffffff;
 }
+
 .project_content{
     width: 100%;
     max-width: 71.25rem;
@@ -342,6 +354,9 @@ div,button,span,p,li,a{
 /* carrer */
 .career{
     background-color: #ffe927;
+}
+.career h3 {
+    border-bottom-color: #000000;
 }
 .career_company{
     background-color: #f7f7f7;
