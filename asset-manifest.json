@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.36417699.css",
-    "main.js": "/Portfolio/static/js/main.c6968062.js",
+    "main.css": "/Portfolio/static/css/main.7061f95c.css",
+    "main.js": "/Portfolio/static/js/main.f8f9bc07.js",
     "static/js/488.9561f9b8.chunk.js": "/Portfolio/static/js/488.9561f9b8.chunk.js",
     "static/media/ItTrip.pdf": "/Portfolio/static/media/ItTrip.a6f80585dedc3c3bab23.pdf",
     "static/media/iwc.pdf": "/Portfolio/static/media/iwc.5507e34f5348f0523e0d.pdf",
@@ -28,12 +28,12 @@
     "static/media/calender.svg": "/Portfolio/static/media/calender.d2d27159443115dc23483cc25fa6c672.svg",
     "static/media/location.svg": "/Portfolio/static/media/location.94c6a40d70da7b868b3ef5f3020a41d5.svg",
     "static/media/person.svg": "/Portfolio/static/media/person.1ed022a6dfb6fb8cfe31d147d21a1044.svg",
-    "main.36417699.css.map": "/Portfolio/static/css/main.36417699.css.map",
-    "main.c6968062.js.map": "/Portfolio/static/js/main.c6968062.js.map",
+    "main.7061f95c.css.map": "/Portfolio/static/css/main.7061f95c.css.map",
+    "main.f8f9bc07.js.map": "/Portfolio/static/js/main.f8f9bc07.js.map",
     "488.9561f9b8.chunk.js.map": "/Portfolio/static/js/488.9561f9b8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.36417699.css",
-    "static/js/main.c6968062.js"
+    "static/css/main.7061f95c.css",
+    "static/js/main.f8f9bc07.js"
   ]
 }
