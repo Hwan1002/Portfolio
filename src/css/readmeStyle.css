@@ -1,0 +1,19 @@
+.readImg{
+    width:47em;
+}
+
+.readImg img{
+    width:100%
+}
+
+.readH4{
+    color: rgb(0, 0, 0);
+}
+.readLineheight{
+    line-height: 1.5;
+    margin-top: 1em;
+}
+
+.readH3{
+    color : rgb(0, 0, 0);
+}
