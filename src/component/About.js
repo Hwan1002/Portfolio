@@ -69,7 +69,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className="wrapper">
-                        <div className="wrapper-item">
+                        {/* <div className="wrapper-item">
                             <div className="icon">
                                 <img src={pencil} alt="icon" />
                             </div>
@@ -77,7 +77,7 @@ const About = () => {
                                 <label>학력</label>
                                 <p>검정고시</p>
                             </div>
-                        </div>
+                        </div> */}
 
                     </div>
                 </div>

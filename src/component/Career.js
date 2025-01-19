@@ -20,7 +20,7 @@ const Career = () => {
                   <p>2022.02 ~ 2022.11</p>
                 </div>
               </div>
-              <div className="career_company">
+              {/* <div className="career_company">
                 <h4>비에이치</h4>
                 <div>
                   <p>핸드폰과 태블릿 디스플레이 내부 제품을 다루고 생산하는 업무를 하였습니다.</p>
@@ -40,7 +40,7 @@ const Career = () => {
                   <p>고객에게 트랜드컬러 , 유행하는 스타일 ,코디 방법등을 설명 드리며 판매하는 업무 입니다.</p>
                   <p>2017.09 ~ 2018.09</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
