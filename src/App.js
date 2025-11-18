@@ -8,7 +8,7 @@ import Skills from "./component/Skills";
 import Archiving from "./component/Archiving.js";
 import Project from "./component/Project.js";
 import Career from "./component/Career.js";
-//ghkdydlf tlwkr goTsmsep dnek ahfmrptrh djffms wnakfdp tnlrh
+//ghkdydlf tlwkr goTsmsep dnek ahfmrptrh djffms wnakfdp tnl
 function App() {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
