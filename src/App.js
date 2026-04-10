@@ -1,6 +1,6 @@
 import "./css/style.css";
-import "./css/readmeStyle.css"
-import hwan from "./css/img/profile/hwan.jpg"
+import "./css/readmeStyle.css";
+import hwan from "./css/img/profile/hwan.jpg";
 import React, { useState, useEffect } from 'react';
 import Header from "./component/Header.js";
 import About from "./component/About";
@@ -8,7 +8,7 @@ import Skills from "./component/Skills";
 import Archiving from "./component/Archiving.js";
 import Project from "./component/Project.js";
 import Career from "./component/Career.js";
-
+//dijknjnwqnjkewqeq
 function App() {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
