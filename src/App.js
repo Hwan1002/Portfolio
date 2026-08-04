@@ -8,7 +8,7 @@ import Skills from "./component/Skills";
 import Archiving from "./component/Archiving.js";
 import Project from "./component/Project.js";
 import Career from "./component/Career.js";
-2132132132132132131332323
+21321321321321321313323
 function App() {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
