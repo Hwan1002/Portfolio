@@ -8,7 +8,7 @@ const Archiving = () => {
               <h3>ARCHIVING</h3>
             </div>
             <div className="section_content">
-              <a href="https://github.com/Hwan1002" className="archiving_box">
+              <a href="https://github.com/Hwan1002" className="archiving_box" target="_blank" rel="noopener noreferrer">
                 <div className="githubImg">
                   <img src={githubText} alt="github"/>
                 </div>

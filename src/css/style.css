@@ -23,6 +23,9 @@
 *, :after, :before {
     box-sizing: border-box;
 }
+button{
+    cursor: pointer;
+}
 h1,h2,h3,h4,h5{
     font-family: 'SBAggroB';
 }
@@ -41,7 +44,11 @@ div,button,span,p,li,a{
     right: 0;
     left: 0;
     z-index: 10;
-    transition: opacity .3s linear;
+    transition: background-color .3s linear;
+}
+/* 히어로 영역을 벗어나면 배경을 깔아 흰 메뉴 글자가 묻히지 않게 함 */
+.header.scrolled{
+    background: rgba(0, 0, 0, .85);
 }
 .navBar button{
     font-size: 20px;
@@ -72,6 +79,9 @@ div,button,span,p,li,a{
 }
 .mastHead_Title{
   color:#fff;
+}
+.mastHead{
+    position: relative;
 }
 .mastHead:before {
     content: "";
@@ -162,7 +172,8 @@ div,button,span,p,li,a{
     bottom: 0;
     color: transparent;
 }
-.wrapper .info label{
+.wrapper .info strong{
+    display: block;
     margin-bottom: .5rem;
     font-weight: 700;
 }
@@ -232,7 +243,6 @@ div,button,span,p,li,a{
 .skills_content img{
     width: 55px;
     height: 55px;
-    aspect-ratio: auto 32 / 32;
     transition: transform .5s ease, box-shadow .5s ease;
 }
 .skills_icon img:hover{
@@ -283,8 +293,8 @@ div,button,span,p,li,a{
     background-color: #2bf8ff;
 }
 .project h3{
-    color: #fff;
-    border-bottom-color: #ffffff;
+    color: #000;
+    border-bottom-color: #000000;
 }
 
 .project_content{
@@ -316,7 +326,7 @@ div,button,span,p,li,a{
 }
 
 .project_period{
-    color: #ccc;
+    color: #767676;
     font-family: 'Pretendard-Regular';
 }
 .project_content h4{
@@ -478,12 +488,11 @@ div,button,span,p,li,a{
   
   .modal {
     background: white;
-    background: white;
     border-radius: 8px;
     max-width: 50em;
     width: calc(100% - 40px);
     max-height: 80%;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
   }
   .modal::-webkit-scrollbar{
@@ -514,6 +523,77 @@ div,button,span,p,li,a{
   }
 
   
-  pre {
+  .modalContent pre {
     white-space: pre-wrap; /* 줄바꿈 유지 */
   }
+
+/* 반응형 */
+@media (max-width: 992px) {
+    .wrapper{
+        width: 50%;
+    }
+    .project_detail{
+        width: 100%;
+    }
+    .career_company{
+        flex: 1 1 100%;
+        margin: 0 0 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container{
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        row-gap: .5rem;
+        padding: .75rem 1rem;
+    }
+    .header{
+        background: rgba(0, 0, 0, .85);
+    }
+    .logo{
+        font-size: 20px;
+    }
+    .navBar button{
+        font-size: 15px;
+        padding: 0 .5rem;
+    }
+    .mastHead_contents{
+        flex-direction: column;
+        padding: 9rem 1.5rem 4rem;
+    }
+    .profileText{
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+    .profileImg{
+        width: 11rem;
+        height: 11rem;
+    }
+    .skills_content img{
+        width: 45px;
+        height: 45px;
+    }
+    .archiving_box{
+        width: 100%;
+        max-width: 26rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper{
+        width: 100%;
+    }
+    .wrapper-item{
+        max-width: 100%;
+        justify-content: flex-start;
+    }
+    .navBar button{
+        font-size: 13px;
+        padding: 0 .3rem;
+    }
+    .section h3{
+        font-size: 2rem;
+    }
+}

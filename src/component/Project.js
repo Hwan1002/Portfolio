@@ -1,44 +1,102 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import ittrip from "../css/img/pdf/ItTrip.pdf";
-import iwc from "../css/img/pdf/iwc.pdf"
-const Project = () => {
-  const openPdfFile = (type) => {
-    const urlMap = {
-      ittrip: ittrip,
-      iwc: iwc
-    };
-    const pdfUrl = urlMap[type];
-    window.open(pdfUrl, '_blank')
-  }
+import iwc from "../css/img/pdf/iwc.pdf";
 
+const projects = [
+  {
+    title: "IT Trip (반응형웹)",
+    period: "팀 프로젝트",
+    summary: "React, Spring Boot 를 활용하여 개발한 반응형 웹사이트 AWS 배포",
+    details: [
+      "여행계획을 할 수 있는 사이트 개발",
+      "여행내 일정마다 출발지, 도착지, 경유지들을 저장하고 맵에 띄울 수 있도록 개발",
+      "소요시간, 키로수 확인 기능 구현",
+      "여행에 필요한 물품이나 준비물등을 체크할 수 있는 체크리스트 구현",
+    ],
+    skills: "HTML, CSS, React, Java, Spring boot, AWS, EC2, RDS",
+    pdf: ittrip,
+    url: "http://ittrip.site",
+    readme: "README.md",
+  },
+  {
+    title: "Movie (순수 자바스크립트)",
+    period: "개인 프로젝트",
+    summary: "Vanilla JS 활용하여 영화 검색 및 즐겨찾기 개발",
+    details: [
+      "OTT 감성으로 영화 리스트 확인 가능",
+      "무한 스크롤 기능 구현",
+      "즐겨찾기를 하여 내가 즐겨찾기한 영화를 관리",
+    ],
+    skills: "Vanilla JavaScript",
+    pdf: null,
+    url: "https://hwan1002.github.io/movie/movie.html",
+    readme: null,
+  },
+  {
+    title: "IWC 리뉴얼(반응형 웹)",
+    period: "개인 프로젝트",
+    summary: "HTML, CSS, JavaScript, Jquery를 활용한 반응형 웹사이트",
+    details: [
+      "기존의 IWC 브랜드 사이트의 리뉴얼",
+      "반응형 웹사이트로 PC,Table,Mobile 의 UI/UX 디자인 구현",
+      "스크롤 하면서 컨텐츠가 소개되어 보는재미 UP!",
+    ],
+    skills: "HTML, CSS, JavaScript, Jquery",
+    pdf: iwc,
+    url: "http://ghkstjr12.dothome.co.kr/iwc/index.html",
+    readme: null,
+  },
+];
+
+const Project = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [readmeContent, setReadmeContent] = useState("");
 
+  const openPdfFile = (pdfUrl) => {
+    if (!pdfUrl) return;
+    window.open(pdfUrl, "_blank", "noopener,noreferrer");
+  };
 
-
-  const loadReadme = async () => {
+  const loadReadme = async (fileName) => {
     try {
-      const response = await fetch(`${process.env.PUBLIC_URL}/README.md`); // public 폴더 기준 경로
+      const response = await fetch(`${process.env.PUBLIC_URL}/${fileName}`);
+      if (!response.ok) {
+        throw new Error(`README 로드 실패 (${response.status})`);
+      }
       const text = await response.text();
       setReadmeContent(text);
     } catch (error) {
       console.error("Error loading README file:", error);
+      setReadmeContent("README 파일을 불러오지 못했습니다.");
     }
   };
 
-  const openModal = () => {
-    loadReadme(); // README 파일 로드
+  const openModal = (fileName) => {
+    setReadmeContent("");
+    loadReadme(fileName);
     setModalOpen(true);
   };
 
-  // 모달 닫기
   const closeModal = () => {
     setModalOpen(false);
   };
 
+  // 모달이 열려 있는 동안 배경 스크롤 잠금 + ESC 로 닫기
+  useEffect(() => {
+    if (!modalOpen) return;
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") closeModal();
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [modalOpen]);
 
   return (
     <section id="project" className="project section">
@@ -47,115 +105,69 @@ const Project = () => {
           <h3>PROJECTS</h3>
         </div>
         <div className="project_list content">
-          <div className="project_detail">
-            <h4>IT Trip (반응형웹)</h4>
-            <div className="project_period">팀 프로젝트</div>
-            <div className="project_summary">
-              <h5>React, Spring Boot 를 활용하여 개발한 반응형 웹사이트 AWS 배포</h5>
-              <ul className="projectSum_ul">
-                <li>여행계획을 할 수 있는 사이트 개발</li>
-                <li>여행내 일정마다 출발지, 도착지, 경유지들을 저장하고 맵에 띄울 수 있도록 개발</li>
-                <li>소요시간, 키로수 확인 기능 구현</li>
-                <li>여행에 필요한 물품이나 준비물등을 체크할 수 있는 체크리스트 구현</li>
-              </ul>
-            </div>
-            <div className="project_skills">
-              HTML, CSS, React, Java, Spring boot,AWS,EC2,RDS
-            </div>
-            <div className="project_pdf project_button">
-              <button onClick={() => openPdfFile('ittrip')}>기획서</button>
-            </div>
-            <div className="project_url project_button">
-              <a href="http://ittrip.site">보러가기</a>
-            </div>
-            <div className="project_readMe project_button">
-              <button onClick={openModal}>README</button>
-            </div>
-          </div>
-          <div className="project_detail">
-            <h4>Movie (순수 자바스크립트)</h4>
-            <div className="project_period">개인 프로젝트</div>
-            <div className="project_summary">
-              <h5>Vanilla JS 활용하여 영화 검색 및 즐겨찾기 개발</h5>
-              <ul className="projectSum_ul">
-                <li>OTT 감성으로 영화 리스트 확인 가능</li>
-                <li>무한 스크롤 기능 구현</li>
-                <li>즐겨찾기를 하여 내가 즐겨찾기한 영화를 관리</li>
-              </ul>
-            </div>
-            <div className="project_skills">
-              Vanilla JavaScript
-            </div>
-            <div className="project_pdf project_button">
-              <button onClick={() => openPdfFile('')}>기획서</button>
-            </div>
-            <div className="project_url project_button">
-              <a href="https://hwan1002.github.io/movie/movie.html">보러가기</a>
-            </div>
-            <div className="project_readMe project_button">
-              <button onClick={openModal}>README</button>
-            </div>
-          </div>
-          <div className="project_detail">
-            <h4>IWC 리뉴얼(반응형 웹)</h4>
-            <div className="project_period">개인 프로젝트</div>
-            <div className="project_summary">
-              <h5>HTML, CSS, JavaScript, Jquery를 활용한 반응형 웹사이트</h5>
-              <ul className="projectSum_ul">
-                <li>기존의 IWC 브랜드 사이트의 리뉴얼</li>
-                <li>반응형 웹사이트로 PC,Table,Mobile 의 UI/UX 디자인 구현</li>
-                <li>스크롤 하면서 컨텐츠가 소개되어 보는재미 UP!</li>
-              </ul>
-            </div>
-            <div className="project_skills">
-              HTML, CSS, React, JavaScript, Jquery
-            </div>
-            <div className="project_pdf project_button">
-              <button onClick={() => openPdfFile('iwc')}>기획서</button>
-            </div>
-            <div className="project_url project_button">
-              <a href="http://ghkstjr12.dothome.co.kr/iwc/index.html">보러가기</a>
-            </div>
-            <div className="project_readMe project_button">
-              <button onClick={openModal}>README</button>
-            </div>
-          </div>
-          {modalOpen && (
-          <div className="modal-backdrop" onClick={(e) => {
-            // 배경(Backdrop)을 클릭했을 때만 모달 닫기
-            if (e.target === e.currentTarget) {
-              closeModal();
-            }
-          }}>
-            <div className="modal">
-              {/* 닫기 버튼 */}
-              <div className = "modal-closeBt">
-                README.md
-              <button className="close-btn" onClick={closeModal} aria-label="Close">
-                &times;     
-              </button>
+          {projects.map((project) => (
+            <div className="project_detail" key={project.title}>
+              <h4>{project.title}</h4>
+              <div className="project_period">{project.period}</div>
+              <div className="project_summary">
+                <h5>{project.summary}</h5>
+                <ul className="projectSum_ul">
+                  {project.details.map((detail) => (
+                    <li key={detail}>{detail}</li>
+                  ))}
+                </ul>
               </div>
-              {/* README 내용 표시 */}
-              {readmeContent ? (
-                <div className="modalContent">
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  rehypePlugins={[rehypeRaw]} // HTML 태그 허용
-                >
-                  {readmeContent}
-                </ReactMarkdown>
+              <div className="project_skills">{project.skills}</div>
+              {project.pdf && (
+                <div className="project_pdf project_button">
+                  <button onClick={() => openPdfFile(project.pdf)}>기획서</button>
                 </div>
-              ) : (
-                <p>Loading...</p>
+              )}
+              <div className="project_url project_button">
+                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                  보러가기
+                </a>
+              </div>
+              {project.readme && (
+                <div className="project_readMe project_button">
+                  <button onClick={() => openModal(project.readme)}>README</button>
+                </div>
               )}
             </div>
-          </div>
-        )}
+          ))}
+          {modalOpen && (
+            <div
+              className="modal-backdrop"
+              onClick={(e) => {
+                // 배경(Backdrop)을 클릭했을 때만 모달 닫기
+                if (e.target === e.currentTarget) {
+                  closeModal();
+                }
+              }}
+            >
+              <div className="modal">
+                <div className="modal-closeBt">
+                  README.md
+                  <button className="close-btn" onClick={closeModal} aria-label="Close">
+                    &times;
+                  </button>
+                </div>
+                {readmeContent ? (
+                  <div className="modalContent">
+                    <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+                      {readmeContent}
+                    </ReactMarkdown>
+                  </div>
+                ) : (
+                  <p>Loading...</p>
+                )}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
-    
-  )
-}
+  );
+};
 
 export default Project;
