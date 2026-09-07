@@ -61,6 +61,7 @@ function App() {
             <h1 className="mastHead_Title">
               <span className="typing_caret">{typedTitle || " "}</span>
             </h1>
+            <p className="mastHead_sub">사용자 경험을 생각하는 풀스택 개발자입니다</p>
             <button className="mastHead_button" onClick={() => scrollToSection("about")}>
               더 알아보기 ↓
             </button>
