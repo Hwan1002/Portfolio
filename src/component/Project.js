@@ -25,7 +25,7 @@ const projects = [
     pdf: null,
     url: null,
     github: "https://github.com/Hwan1002/masil",
-    readme: null,
+    readme: "masil-README.md",
   },
   {
     title: "IT Trip (반응형웹)",
