@@ -4,6 +4,7 @@
 /* ===== 디자인 토큰 ===== */
 :root{
     --accent: #e5484d;
+    --accent-grad: linear-gradient(135deg, #e5484d, #ff8a4c);
     --text-strong: #111111;
     --text: #333333;
     --text-muted: #555555;
@@ -14,6 +15,7 @@
     --radius: 12px;
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, .06);
     --shadow-md: 0 12px 28px rgba(0, 0, 0, .10);
+    --shadow-glow: 0 0 0 1px rgba(229, 72, 77, .35), 0 8px 28px rgba(229, 72, 77, .30);
 }
 
 @keyframes blink-caret {
@@ -170,7 +172,7 @@ h1, h2, h3, h4, h5{
     transition: background-color .25s ease, color .25s ease, transform .25s ease;
 }
 .mastHead_button:hover{
-    background-color: var(--accent);
+    background: var(--accent-grad);
     color: #ffffff;
     transform: translateY(-2px);
 }
@@ -185,9 +187,20 @@ h1, h2, h3, h4, h5{
 .section{
     background: var(--bg);
 }
+/* 라이트 섹션에 은은한 도트 그리드 패턴 */
 .skills,
 .project{
-    background: var(--bg-alt);
+    background-color: #f6f7f9;
+    background-image: radial-gradient(#e2e4e9 1px, transparent 1px);
+    background-size: 22px 22px;
+}
+/* 중간 리듬용 다크 섹션 */
+.archiving{
+    background-color: #101114;
+    background-image: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(229, 72, 77, .08), transparent);
+}
+.archiving.section h3{
+    color: #ffffff;
 }
 .section_title{
     display: table;
@@ -210,7 +223,7 @@ h1, h2, h3, h4, h5{
     width: 2.5rem;
     height: 3px;
     border-radius: 2px;
-    background: var(--accent);
+    background: var(--accent-grad);
 }
 .section_content{
     display: flex;
@@ -254,18 +267,19 @@ h1, h2, h3, h4, h5{
     margin: 0 auto;
 }
 .wrapper .icon{
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
-    width: 2.25rem;
-    height: 2.25rem;
-    margin-top: .2rem;
-    opacity: .85;
+    width: 2.75rem;
+    height: 2.75rem;
+    background: #fdefef;
+    border-radius: 50%;
 }
 .wrapper .icon img{
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    width: 1.3rem;
+    height: 1.3rem;
+    opacity: .8;
 }
 .wrapper .info strong{
     display: block;
@@ -308,7 +322,8 @@ h1, h2, h3, h4, h5{
 }
 .skills_group:hover{
     transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    border-color: rgba(229, 72, 77, .4);
+    box-shadow: var(--shadow-glow);
 }
 .skills_group_title{
     font-size: 1.05rem;
@@ -362,7 +377,8 @@ h1, h2, h3, h4, h5{
 }
 .archiving_box:hover{
     transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    border-color: rgba(229, 72, 77, .4);
+    box-shadow: var(--shadow-glow);
 }
 .archiving_box img{
     width: 100%;
@@ -405,7 +421,8 @@ h1, h2, h3, h4, h5{
 }
 .project_detail:hover{
     transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    border-color: rgba(229, 72, 77, .4);
+    box-shadow: var(--shadow-glow);
 }
 .project_thumb{
     width: 100%;
@@ -415,6 +432,10 @@ h1, h2, h3, h4, h5{
     border-radius: 8px;
     border: 1px solid #f0f0f0;
     margin-bottom: 1.25rem;
+    transition: transform .35s ease;
+}
+.project_detail:hover .project_thumb{
+    transform: scale(1.02);
 }
 .project_content h4{
     margin: 0 0 .35rem;
@@ -449,11 +470,11 @@ h1, h2, h3, h4, h5{
     align-self: flex-start;
     padding: .3rem .8rem;
     margin: 1.25rem 0 0;
-    background: var(--bg-alt);
-    border: 1px solid var(--border);
+    background: #fdf3f3;
+    border: 1px solid #f3d4d5;
     border-radius: 999px;
     font-size: .78rem;
-    color: var(--text-muted);
+    color: #b93a3f;
 }
 .project_buttons{
     display: flex;
@@ -522,7 +543,8 @@ h1, h2, h3, h4, h5{
 }
 .career_company:hover{
     transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    border-color: rgba(229, 72, 77, .4);
+    box-shadow: var(--shadow-glow);
 }
 .career_company_head{
     display: flex;
@@ -540,7 +562,7 @@ h1, h2, h3, h4, h5{
 }
 .career_badge{
     padding: .15rem .6rem;
-    background-color: var(--accent);
+    background: var(--accent-grad);
     border-radius: 10rem;
     color: #fff;
     font-size: .7rem;
@@ -661,7 +683,7 @@ h1, h2, h3, h4, h5{
     width: 2.5rem;
     height: 3px;
     border-radius: 2px;
-    background: var(--accent);
+    background: var(--accent-grad);
 }
 .footer_contact{
     display: flex;
@@ -686,7 +708,7 @@ h1, h2, h3, h4, h5{
 }
 .footer_github{
     padding: .75rem 1.5rem;
-    background-color: var(--accent);
+    background: var(--accent-grad);
     border-radius: 10rem;
     color: #fff;
     font-size: .95rem;
