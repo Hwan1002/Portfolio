@@ -3,6 +3,10 @@ import css from "../css/img/icon/CSS.svg";
 import javaScript from "../css/img/icon/JavaScript.svg";
 import typeScript from "../css/img/icon/TypeScript.svg";
 import react from "../css/img/icon/React-Light.svg";
+import nextjs from "../css/img/icon/NextJS-Light.svg";
+import tailwind from "../css/img/icon/TailwindCSS-Light.svg";
+import docker from "../css/img/icon/Docker.svg";
+import githubActions from "../css/img/icon/GithubActions-Light.svg";
 import node from "../css/img/icon/NodeJS-Light.svg";
 import java from "../css/img/icon/Java-Light.svg";
 import spring from "../css/img/icon/Spring-Light.svg";
@@ -19,12 +23,16 @@ const skillIcons = [
   { src: javaScript, name: "JavaScript" },
   { src: typeScript, name: "TypeScript" },
   { src: react, name: "React" },
+  { src: nextjs, name: "Next.js" },
+  { src: tailwind, name: "Tailwind CSS" },
   { src: node, name: "Node.js" },
   { src: java, name: "Java" },
   { src: spring, name: "Spring" },
   { src: mysql, name: "MySQL" },
   { src: gradle, name: "Gradle" },
   { src: nginx, name: "Nginx" },
+  { src: docker, name: "Docker" },
+  { src: githubActions, name: "GitHub Actions" },
   { src: git, name: "Git" },
   { src: github, name: "GitHub" },
   { src: aws, name: "AWS" },
