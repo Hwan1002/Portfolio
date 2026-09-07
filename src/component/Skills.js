@@ -1,6 +1,7 @@
 import html from "../css/img/icon/HTML.svg";
 import css from "../css/img/icon/CSS.svg";
 import javaScript from "../css/img/icon/JavaScript.svg";
+import typeScript from "../css/img/icon/TypeScript.svg";
 import react from "../css/img/icon/React-Light.svg";
 import node from "../css/img/icon/NodeJS-Light.svg";
 import java from "../css/img/icon/Java-Light.svg";
@@ -16,6 +17,7 @@ const skillIcons = [
   { src: html, name: "HTML" },
   { src: css, name: "CSS" },
   { src: javaScript, name: "JavaScript" },
+  { src: typeScript, name: "TypeScript" },
   { src: react, name: "React" },
   { src: node, name: "Node.js" },
   { src: java, name: "Java" },
