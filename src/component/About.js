@@ -19,6 +19,12 @@ const About = () => {
         <div className="section_title">
           <h3>ABOUT ME</h3>
         </div>
+        <p className="aboutMe_intro">
+          안녕하세요, 사용자 경험을 먼저 생각하는 프론트엔드 개발자 <strong>장환석</strong>입니다.
+          <br />
+          퍼블리싱으로 시작해 React와 Spring Boot로 기획부터 배포까지 서비스 개발을 경험했고,
+          화면 너머의 사용자를 상상하며 만드는 일에 즐거움을 느낍니다.
+        </p>
         <div className="section_content aboutMe_content">
           {aboutItems.map((item) => (
             <div className="wrapper" key={item.label}>

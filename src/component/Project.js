@@ -4,6 +4,9 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import ittrip from "../css/img/pdf/ItTrip.pdf";
 import iwc from "../css/img/pdf/iwc.pdf";
+import ittripThumb from "../css/img/project/ittrip.jpg";
+import movieThumb from "../css/img/project/movie.jpg";
+import iwcThumb from "../css/img/project/iwc.jpg";
 
 const projects = [
   {
@@ -17,8 +20,10 @@ const projects = [
       "여행에 필요한 물품이나 준비물등을 체크할 수 있는 체크리스트 구현",
     ],
     skills: "HTML, CSS, React, Java, Spring boot, AWS, EC2, RDS",
+    thumb: ittripThumb,
     pdf: ittrip,
-    url: "http://ittrip.site",
+    url: null, // ittrip.site 도메인 만료로 링크 제거 (복구 시 URL 다시 넣기)
+    github: "https://github.com/Hwan1002/ittrip-project",
     readme: "README.md",
   },
   {
@@ -31,8 +36,10 @@ const projects = [
       "즐겨찾기를 하여 내가 즐겨찾기한 영화를 관리",
     ],
     skills: "Vanilla JavaScript",
+    thumb: movieThumb,
     pdf: null,
-    url: "https://hwan1002.github.io/movie/movie.html",
+    url: "https://hwan1002.github.io/movie/",
+    github: "https://github.com/Hwan1002/movie",
     readme: null,
   },
   {
@@ -45,8 +52,10 @@ const projects = [
       "스크롤 하면서 컨텐츠가 소개되어 보는재미 UP!",
     ],
     skills: "HTML, CSS, JavaScript, Jquery",
+    thumb: iwcThumb,
     pdf: iwc,
-    url: "http://ghkstjr12.dothome.co.kr/iwc/index.html",
+    url: null, // dothome 호스팅 만료로 링크 제거
+    github: null,
     readme: null,
   },
 ];
@@ -107,6 +116,7 @@ const Project = () => {
         <div className="project_list content">
           {projects.map((project) => (
             <div className="project_detail" key={project.title}>
+              <img className="project_thumb" src={project.thumb} alt={`${project.title} 미리보기`} />
               <h4>{project.title}</h4>
               <div className="project_period">{project.period}</div>
               <div className="project_summary">
@@ -118,21 +128,32 @@ const Project = () => {
                 </ul>
               </div>
               <div className="project_skills">{project.skills}</div>
-              {project.pdf && (
-                <div className="project_pdf project_button">
-                  <button onClick={() => openPdfFile(project.pdf)}>기획서</button>
-                </div>
-              )}
-              <div className="project_url project_button">
-                <a href={project.url} target="_blank" rel="noopener noreferrer">
-                  보러가기
-                </a>
+              <div className="project_buttons">
+                {project.pdf && (
+                  <div className="project_pdf project_button">
+                    <button onClick={() => openPdfFile(project.pdf)}>기획서</button>
+                  </div>
+                )}
+                {project.url && (
+                  <div className="project_url project_button">
+                    <a href={project.url} target="_blank" rel="noopener noreferrer">
+                      보러가기
+                    </a>
+                  </div>
+                )}
+                {project.github && (
+                  <div className="project_github project_button">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      GitHub
+                    </a>
+                  </div>
+                )}
+                {project.readme && (
+                  <div className="project_readMe project_button">
+                    <button onClick={() => openModal(project.readme)}>README</button>
+                  </div>
+                )}
               </div>
-              {project.readme && (
-                <div className="project_readMe project_button">
-                  <button onClick={() => openModal(project.readme)}>README</button>
-                </div>
-              )}
             </div>
           ))}
           {modalOpen && (
