@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.7afaf1aa.css",
-    "main.js": "/Portfolio/static/js/main.1c25ab22.js",
+    "main.js": "/Portfolio/static/js/main.40fbbc25.js",
     "static/media/ItTrip.pdf": "/Portfolio/static/media/ItTrip.a6f80585dedc3c3bab23.pdf",
     "static/media/iwc.pdf": "/Portfolio/static/media/iwc.5507e34f5348f0523e0d.pdf",
     "static/media/moon.jpg": "/Portfolio/static/media/moon.e1453a08d3724feddae7.jpg",
@@ -18,6 +18,7 @@
     "static/media/Git.svg": "/Portfolio/static/media/Git.87d6e2a3383a582dd8d951daf9c95c04.svg",
     "static/media/Java-Light.svg": "/Portfolio/static/media/Java-Light.76016987bb8232e257a6187980dab1cf.svg",
     "static/media/React-Light.svg": "/Portfolio/static/media/React-Light.859310e341351502b4a2a19a19f7ad32.svg",
+    "static/media/TypeScript.svg": "/Portfolio/static/media/TypeScript.5d93426aa26d9e2ac669d370a8fc46a1.svg",
     "static/media/Spring-Light.svg": "/Portfolio/static/media/Spring-Light.e5e2e4cd63f9082b41ec78bbb731727f.svg",
     "index.html": "/Portfolio/index.html",
     "static/media/JavaScript.svg": "/Portfolio/static/media/JavaScript.9f6d2fe5133ce2821b476aa343183565.svg",
@@ -30,10 +31,10 @@
     "static/media/location.svg": "/Portfolio/static/media/location.8947352bcd990386026070f1fdf7b5ca.svg",
     "static/media/person.svg": "/Portfolio/static/media/person.1708317b4a953dfe21ec0bba86f9bfeb.svg",
     "main.7afaf1aa.css.map": "/Portfolio/static/css/main.7afaf1aa.css.map",
-    "main.1c25ab22.js.map": "/Portfolio/static/js/main.1c25ab22.js.map"
+    "main.40fbbc25.js.map": "/Portfolio/static/js/main.40fbbc25.js.map"
   },
   "entrypoints": [
     "static/css/main.7afaf1aa.css",
-    "static/js/main.1c25ab22.js"
+    "static/js/main.40fbbc25.js"
   ]
 }
