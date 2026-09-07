@@ -28,6 +28,13 @@ const Footer = () => {
           {copied ? "이메일이 복사되었습니다 ✓" : `✉ ${EMAIL}`}
         </button>
         <a
+          className="footer_resume"
+          href={`${process.env.PUBLIC_URL}/resume.pdf`}
+          download="장환석_이력서.pdf"
+        >
+          📄 이력서 다운로드
+        </a>
+        <a
           className="footer_github"
           href="https://github.com/Hwan1002"
           target="_blank"

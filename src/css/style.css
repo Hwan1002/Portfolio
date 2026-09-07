@@ -808,6 +808,21 @@ h1, h2, h3, h4, h5{
     background-color: #fff;
     color: var(--text-strong);
 }
+.footer_resume{
+    padding: .75rem 1.5rem;
+    background-color: transparent;
+    border: 1px solid #555;
+    border-radius: 10rem;
+    color: #fff;
+    font-size: .95rem;
+    text-decoration: none;
+    transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+}
+.footer_resume:hover{
+    background-color: #fff;
+    border-color: #fff;
+    color: var(--text-strong);
+}
 .footer_github{
     padding: .75rem 1.5rem;
     background: var(--accent-grad);
