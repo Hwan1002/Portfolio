@@ -89,7 +89,12 @@
 
 <b>💬 실시간 채팅</b>
 
+<div class="readImg">
+    <img src="readme-img/masil-chat.jpg" style="width:100%" alt="실시간 채팅"/>
+</div>
+
 <div class="readLineheight">
+  <h4 style="color:black; background-color:white; margin:0; padding:0;">"이웃과 실시간으로 대여 약속을 잡아보세요!"</h4>
   <ul>
     <li>WebSocket 기반 <b>1:1 실시간 채팅</b>으로 빌리는 사람과 빌려주는 사람이 바로 대화할 수 있습니다.</li>
     <li>메시지 읽음 처리와 안 읽은 메시지 뱃지로 대화 상태를 놓치지 않습니다.</li>
