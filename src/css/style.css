@@ -447,10 +447,14 @@ h1, h2, h3, h4, h5{
     text-decoration: none;
     transition: transform .3s ease, box-shadow .3s ease;
 }
+/* 다크 배경에서는 은은한 글로우가 묻히므로 네온처럼 강하게 */
 .archiving_box:hover{
     transform: translateY(-4px);
-    border-color: rgba(229, 72, 77, .4);
-    box-shadow: var(--shadow-glow);
+    border-color: rgba(229, 72, 77, .8);
+    box-shadow:
+        0 0 0 2px rgba(229, 72, 77, .35),
+        0 0 34px rgba(229, 72, 77, .55),
+        0 0 90px rgba(229, 72, 77, .3);
 }
 .archiving_box img{
     width: 100%;
