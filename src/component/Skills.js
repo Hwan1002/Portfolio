@@ -5,8 +5,6 @@ import typeScript from "../css/img/icon/TypeScript.svg";
 import react from "../css/img/icon/React-Light.svg";
 import nextjs from "../css/img/icon/NextJS-Light.svg";
 import tailwind from "../css/img/icon/TailwindCSS-Light.svg";
-import docker from "../css/img/icon/Docker.svg";
-import githubActions from "../css/img/icon/GithubActions-Light.svg";
 import node from "../css/img/icon/NodeJS-Light.svg";
 import java from "../css/img/icon/Java-Light.svg";
 import spring from "../css/img/icon/Spring-Light.svg";
@@ -16,26 +14,48 @@ import git from "../css/img/icon/Git.svg";
 import nginx from "../css/img/icon/Nginx.svg";
 import github from "../css/img/icon/Github-Light.svg";
 import aws from "../css/img/icon/AWS-Light.svg";
+import docker from "../css/img/icon/Docker.svg";
+import githubActions from "../css/img/icon/GithubActions-Light.svg";
 
-const skillIcons = [
-  { src: html, name: "HTML" },
-  { src: css, name: "CSS" },
-  { src: javaScript, name: "JavaScript" },
-  { src: typeScript, name: "TypeScript" },
-  { src: react, name: "React" },
-  { src: nextjs, name: "Next.js" },
-  { src: tailwind, name: "Tailwind CSS" },
-  { src: node, name: "Node.js" },
-  { src: java, name: "Java" },
-  { src: spring, name: "Spring" },
-  { src: mysql, name: "MySQL" },
-  { src: gradle, name: "Gradle" },
-  { src: nginx, name: "Nginx" },
-  { src: docker, name: "Docker" },
-  { src: githubActions, name: "GitHub Actions" },
-  { src: git, name: "Git" },
-  { src: github, name: "GitHub" },
-  { src: aws, name: "AWS" },
+const skillGroups = [
+  {
+    title: "Frontend",
+    items: [
+      { src: html, name: "HTML" },
+      { src: css, name: "CSS" },
+      { src: javaScript, name: "JavaScript" },
+      { src: typeScript, name: "TypeScript" },
+      { src: react, name: "React" },
+      { src: nextjs, name: "Next.js" },
+      { src: tailwind, name: "Tailwind CSS" },
+    ],
+  },
+  {
+    title: "Backend",
+    items: [
+      { src: node, name: "Node.js" },
+      { src: java, name: "Java" },
+      { src: spring, name: "Spring Boot" },
+      { src: mysql, name: "MySQL" },
+    ],
+  },
+  {
+    title: "DevOps & Infra",
+    items: [
+      { src: aws, name: "AWS" },
+      { src: docker, name: "Docker" },
+      { src: nginx, name: "Nginx" },
+      { src: githubActions, name: "GitHub Actions" },
+      { src: gradle, name: "Gradle" },
+    ],
+  },
+  {
+    title: "Tools",
+    items: [
+      { src: git, name: "Git" },
+      { src: github, name: "GitHub" },
+    ],
+  },
 ];
 
 const Skills = () => {
@@ -46,11 +66,19 @@ const Skills = () => {
           <h3>SKILLS</h3>
         </div>
         <div className="skills_content content">
-          <div className="section_content skills_icon">
-            {skillIcons.map((skill) => (
-              <img src={skill.src} alt={skill.name} title={skill.name} key={skill.name} />
-            ))}
-          </div>
+          {skillGroups.map((group) => (
+            <div className="skills_group" key={group.title}>
+              <h4 className="skills_group_title">{group.title}</h4>
+              <div className="skills_icons">
+                {group.items.map((skill) => (
+                  <div className="skill_item" key={skill.name}>
+                    <img src={skill.src} alt={skill.name} title={skill.name} />
+                    <span>{skill.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
