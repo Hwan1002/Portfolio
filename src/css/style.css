@@ -491,19 +491,70 @@ div,button,span,p,li,a{
 .career h3 {
     border-bottom-color: #000000;
 }
+.career_group:not(:last-child){
+    margin-bottom: 3.5rem;
+}
+.career_group_title{
+    display: table;
+    margin: 0 auto 2rem;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid #000;
+    font-size: 1.3rem;
+    color: #000;
+}
+.career_grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
 .career_company{
-    background-color: #f7f7f7;
-    border:2px solid #000;
+    display: flex;
+    flex-direction: column;
+    row-gap: .6rem;
+    background-color: #fffef5;
+    border: 2px solid #000;
     border-radius: 10px;
-    padding:15px;
-    flex: 1 1 calc(33.333% - 20px);
-    box-sizing: border-box;
-    margin: 0 15px;
+    padding: 1.5rem 1.25rem;
     transition: transform .5s ease, box-shadow .5s ease;
 }
 .career_company:hover{
     box-shadow: 0 0 0.5em .5em #000000;
     transform: translateY(-10px);
+}
+.career_company_head{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+.career_company h5,
+.career_company p{
+    margin: 0;
+}
+.career_company h5{
+    font-size: 1.05rem;
+}
+.career_badge{
+    padding: .15rem .6rem;
+    background-color: #f94148;
+    border-radius: 10rem;
+    color: #fff;
+    font-size: .7rem;
+    font-weight: bold;
+}
+.career_role{
+    font-size: .85rem;
+    font-weight: 600;
+    color: #555;
+}
+.career_desc{
+    flex: 1;
+    font-size: .875rem;
+    word-break: keep-all;
+}
+.career_period{
+    font-size: .8rem;
+    color: #777;
 }
 
 /* modal css */
@@ -569,9 +620,8 @@ div,button,span,p,li,a{
     .project_detail{
         width: 100%;
     }
-    .career_company{
-        flex: 1 1 100%;
-        margin: 0 0 1rem;
+    .career_grid{
+        grid-template-columns: 1fr;
     }
 }
 
