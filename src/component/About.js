@@ -20,10 +20,11 @@ const About = () => {
           <h3>ABOUT ME</h3>
         </div>
         <p className="aboutMe_intro">
-          안녕하세요, 사용자 경험을 먼저 생각하는 프론트엔드 개발자 <strong>장환석</strong>입니다.
+          안녕하세요, 프론트엔드부터 백엔드까지 서비스 전반을 다루는 풀스택 개발자{" "}
+          <strong>장환석</strong>입니다.
           <br />
-          퍼블리싱으로 시작해 React와 Spring Boot로 기획부터 배포까지 서비스 개발을 경험했고,
-          화면 너머의 사용자를 상상하며 만드는 일에 즐거움을 느낍니다.
+          React로 사용자 화면을 만들고 Spring Boot와 AWS로 서버 구축과 배포까지, 기획부터 운영까지
+          서비스의 전 과정을 경험했습니다.
         </p>
         <div className="section_content aboutMe_content">
           {aboutItems.map((item) => (
