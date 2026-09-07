@@ -82,6 +82,7 @@ const projects = [
 
 const Project = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalClosing, setModalClosing] = useState(false);
   const [readmeContent, setReadmeContent] = useState("");
 
   const openPdfFile = (pdfUrl) => {
@@ -113,8 +114,13 @@ const Project = () => {
     setModalOpen(true);
   };
 
+  // 닫힘 애니메이션이 끝난 뒤 언마운트
   const closeModal = () => {
-    setModalOpen(false);
+    setModalClosing(true);
+    setTimeout(() => {
+      setModalOpen(false);
+      setModalClosing(false);
+    }, 250);
   };
 
   // 모달이 열려 있는 동안 배경 스크롤 잠금 + ESC 로 닫기
@@ -182,7 +188,7 @@ const Project = () => {
           ))}
           {modalOpen && (
             <div
-              className="modal-backdrop"
+              className={`modal-backdrop${modalClosing ? " closing" : ""}`}
               onClick={(e) => {
                 // 배경(Backdrop)을 클릭했을 때만 모달 닫기
                 if (e.target === e.currentTarget) {
