@@ -1,6 +1,6 @@
 import "./css/style.css";
 import "./css/readmeStyle.css";
-import hwan from "./css/img/profile/hwan.jpg";
+import ProfilePhoto from "./component/ProfilePhoto";
 import { useEffect, useState } from "react";
 import Header from "./component/Header";
 import About from "./component/About";
@@ -54,9 +54,7 @@ function App() {
       <Header />
       <div className="mastHead">
         <div className="mastHead_contents">
-          <div className="profileImg">
-            <img src={hwan} alt="장환석 프로필 사진" />
-          </div>
+          <ProfilePhoto />
           <div className="profileText">
             <h1 className="mastHead_Title">
               <span className="typing_caret">{typedTitle || " "}</span>
