@@ -7,8 +7,26 @@ import iwc from "../css/img/pdf/iwc.pdf";
 import ittripThumb from "../css/img/project/ittrip.jpg";
 import movieThumb from "../css/img/project/movie.jpg";
 import iwcThumb from "../css/img/project/iwc.jpg";
+import masilThumb from "../css/img/project/masil.jpg";
 
 const projects = [
+  {
+    title: "Masil (렌탈 마켓 플랫폼)",
+    period: "팀 프로젝트",
+    summary: "React, Spring Boot로 개발한 이웃 간 물품 렌탈 플랫폼",
+    details: [
+      "렌탈 물품을 업로드하고 개인 간에 물건을 빌리고 빌려줄 수 있는 서비스",
+      "WebSocket 기반 실시간 1:1 채팅 (읽음 처리, 미읽음 뱃지)",
+      "JWT + OAuth2(구글·네이버·카카오) 소셜 로그인 구현",
+      "위치 기반으로 근처 5km 이내의 렌탈 물품 조회 기능",
+    ],
+    skills: "React, Zustand, Java, Spring Boot, Spring Security, JWT, OAuth2, WebSocket, MySQL",
+    thumb: masilThumb,
+    pdf: null,
+    url: null,
+    github: "https://github.com/Hwan1002/masil",
+    readme: null,
+  },
   {
     title: "IT Trip (반응형웹)",
     period: "팀 프로젝트",
@@ -42,7 +60,7 @@ const projects = [
     pdf: null,
     url: "https://hwan1002.github.io/movie/",
     github: "https://github.com/Hwan1002/movie",
-    readme: null,
+    readme: "https://raw.githubusercontent.com/Hwan1002/movie/main/README.md",
   },
   {
     title: "IWC 리뉴얼(반응형 웹)",
@@ -73,7 +91,11 @@ const Project = () => {
 
   const loadReadme = async (fileName) => {
     try {
-      const response = await fetch(`${process.env.PUBLIC_URL}/${fileName}`);
+      // 절대 URL(GitHub raw 등)이면 그대로, 아니면 public 폴더에서 로드
+      const url = /^https?:\/\//.test(fileName)
+        ? fileName
+        : `${process.env.PUBLIC_URL}/${fileName}`;
+      const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`README 로드 실패 (${response.status})`);
       }
