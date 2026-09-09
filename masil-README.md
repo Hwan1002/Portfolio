@@ -36,7 +36,7 @@
 <b>🏠 메인 페이지
 </b>
 <div class="readImg">
-    <img src="readme-img/masil-main.jpg" style="width:100%" alt="메인"/>
+    <video src="readme-video/masil-main.mp4" autoplay muted loop playsinline></video>
 </div>
 
 <div class="readLineheight">
@@ -52,7 +52,7 @@
 </b>
 
 <div class="readImg">
-    <img src="readme-img/masil-login.jpg" style="width:100%" alt="로그인"/>
+    <video src="readme-video/masil-login.mp4" autoplay muted loop playsinline></video>
 </div>
 
 <div class="readLineheight">
@@ -78,6 +78,10 @@
 
 <b>📍 위치 기반 렌탈 물품</b>
 
+<div class="readImg">
+    <video src="readme-video/masil-item.mp4" autoplay muted loop playsinline></video>
+</div>
+
 <div class="readLineheight">
   <ul>
     <li>등록한 위치를 기준으로 <b>근처 5km 이내</b>의 렌탈 물품을 조회할 수 있습니다.</li>
@@ -90,7 +94,7 @@
 <b>💬 실시간 채팅</b>
 
 <div class="readImg">
-    <img src="readme-img/masil-chat.jpg" style="width:100%" alt="실시간 채팅"/>
+    <video src="readme-video/masil-chat.mp4" autoplay muted loop playsinline></video>
 </div>
 
 <div class="readLineheight">

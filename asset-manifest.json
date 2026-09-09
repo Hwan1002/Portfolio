@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.5ac0442d.css",
-    "main.js": "/Portfolio/static/js/main.0ec872b8.js",
+    "main.css": "/Portfolio/static/css/main.55660397.css",
+    "main.js": "/Portfolio/static/js/main.9ad7f4c9.js",
     "static/media/ItTrip.pdf": "/Portfolio/static/media/ItTrip.a6f80585dedc3c3bab23.pdf",
     "static/media/iwc.pdf": "/Portfolio/static/media/iwc.5507e34f5348f0523e0d.pdf",
     "static/media/moon.jpg": "/Portfolio/static/media/moon.e1453a08d3724feddae7.jpg",
@@ -35,11 +35,11 @@
     "static/media/calender.svg": "/Portfolio/static/media/calender.d2d27159443115dc23483cc25fa6c672.svg",
     "static/media/location.svg": "/Portfolio/static/media/location.94c6a40d70da7b868b3ef5f3020a41d5.svg",
     "static/media/person.svg": "/Portfolio/static/media/person.1ed022a6dfb6fb8cfe31d147d21a1044.svg",
-    "main.5ac0442d.css.map": "/Portfolio/static/css/main.5ac0442d.css.map",
-    "main.0ec872b8.js.map": "/Portfolio/static/js/main.0ec872b8.js.map"
+    "main.55660397.css.map": "/Portfolio/static/css/main.55660397.css.map",
+    "main.9ad7f4c9.js.map": "/Portfolio/static/js/main.9ad7f4c9.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ac0442d.css",
-    "static/js/main.0ec872b8.js"
+    "static/css/main.55660397.css",
+    "static/js/main.9ad7f4c9.js"
   ]
 }
