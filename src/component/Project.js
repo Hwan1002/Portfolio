@@ -12,8 +12,8 @@ import maumsarangThumb from "../css/img/project/maumsarang.jpg";
 
 const projects = [
   {
-    title: "마음사랑 서비스 리뉴얼 (실무)",
-    period: "회사 프로젝트 · 2025.11 ~ 진행 중",
+    title: "심리검사·상담 서비스 리뉴얼 (실무)",
+    period: "회사 프로젝트",
     summary: "레거시 Classic ASP 시스템을 React/TypeScript + Node.js(Fastify)로 점진 이관",
     details: [
       "워크샵·강사 관리 시스템을 React 19 + TS + TanStack Query로 리뉴얼 (강사 등록·인증 플로우, 수강생 엑셀 검증 등 주도)",

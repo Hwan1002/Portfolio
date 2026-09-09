@@ -1,8 +1,8 @@
 
-<h1>마음사랑 서비스 리뉴얼</h1>
+<h1>심리검사·상담 서비스 리뉴얼</h1>
 
 <div class="readImg">
-    <img src="readme-img/maumsarang-cover.jpg" alt="마음사랑 서비스 리뉴얼" />
+    <img src="readme-img/maumsarang-cover.jpg" alt="서비스 리뉴얼 프로젝트" />
 </div>
 <br/>
 <h4 style="color:black; background-color:white; margin:0; padding:0;">레거시를 멈추지 않고, 새 스택으로 갈아타기 !</h4><br/>
@@ -10,10 +10,10 @@
 <b>🏢 심리검사·상담 서비스의 레거시 시스템 현대화 (실무)</b><br/>
 
 <div class="readLineheight">
- 심리검사·상담 서비스 <b>마음사랑</b>의 운영 시스템은 오랫동안 Classic ASP로 운영되어 왔습니다.<br/>
+ 심리검사·상담 서비스의 운영 시스템은 오랫동안 Classic ASP로 운영되어 왔습니다.<br/>
  서비스를 멈추지 않은 채, 워크샵 관리 시스템과 관리자 백엔드를
  <b>React · TypeScript · Node.js(Fastify)</b> 스택으로 점진적으로 이관하는 프로젝트에
- 주력 개발자로 참여하고 있습니다. (2025.11 ~ 진행 중)
+ 주력 개발자로 참여하고 있습니다.
 </div>
 <br/>
 
@@ -86,5 +86,5 @@
 </div>
 <br/>
 
-<b>✨ 멈추지 않는 서비스 위에서, 레거시를 미래로 — 마음사랑 리뉴얼 !
+<b>✨ 멈추지 않는 서비스 위에서, 레거시를 미래로 !
 </b>
