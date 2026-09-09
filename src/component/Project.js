@@ -173,18 +173,6 @@ const Project = () => {
               </div>
               <div className="project_skills">{project.skills}</div>
               <div className="project_buttons">
-                {project.pdf && (
-                  <div className="project_pdf project_button">
-                    <button onClick={() => openPdfFile(project.pdf)}>기획서</button>
-                  </div>
-                )}
-                {project.url && (
-                  <div className="project_url project_button">
-                    <a href={project.url} target="_blank" rel="noopener noreferrer">
-                      보러가기
-                    </a>
-                  </div>
-                )}
                 {project.github && (
                   <div className="project_github project_button">
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
@@ -195,6 +183,18 @@ const Project = () => {
                 {project.readme && (
                   <div className="project_readMe project_button">
                     <button onClick={() => openModal(project.readme)}>README</button>
+                  </div>
+                )}
+                {project.pdf && (
+                  <div className="project_pdf project_button">
+                    <button onClick={() => openPdfFile(project.pdf)}>기획서</button>
+                  </div>
+                )}
+                {project.url && (
+                  <div className="project_url project_button">
+                    <a href={project.url} target="_blank" rel="noopener noreferrer">
+                      보러가기
+                    </a>
                   </div>
                 )}
               </div>
