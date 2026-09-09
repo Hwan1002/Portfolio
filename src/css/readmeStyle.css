@@ -6,6 +6,12 @@
     width:100%
 }
 
+.readImg video{
+    width:100%;
+    display:block;
+    border-radius:8px;
+}
+
 .readH4{
     color: rgb(0, 0, 0);
 }
