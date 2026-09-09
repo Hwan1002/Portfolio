@@ -80,6 +80,20 @@ const projects = [
   },
 ];
 
+// README 안의 상대경로(readme-img/... 등)를 배포 경로(/Portfolio/) 기준으로 변환
+// (dev 서버도 homepage 설정 때문에 /Portfolio 하위에서 자원을 서빙함)
+const resolveReadmeAsset = (src) => {
+  if (!src || /^(https?:|data:|\/)/.test(src)) return src;
+  return `${process.env.PUBLIC_URL}/${src}`;
+};
+
+const readmeComponents = {
+  img: ({ node, src, alt, ...props }) => (
+    <img {...props} src={resolveReadmeAsset(src)} alt={alt || ""} />
+  ),
+  video: ({ node, src, ...props }) => <video {...props} src={resolveReadmeAsset(src)} />,
+};
+
 const Project = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalClosing, setModalClosing] = useState(false);
@@ -205,7 +219,11 @@ const Project = () => {
                 </div>
                 {readmeContent ? (
                   <div className="modalContent">
-                    <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+                    <ReactMarkdown
+                      remarkPlugins={[remarkGfm]}
+                      rehypePlugins={[rehypeRaw]}
+                      components={readmeComponents}
+                    >
                       {readmeContent}
                     </ReactMarkdown>
                   </div>
