@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import hwan from "../css/img/profile/hwan.jpg";
-//11111111111111111
+//1111111111111111
 const EMOJIS = ["❤️", "❤️", "❤️", "❤️", "❤️", "❤️", "❤️", "❤️"];
 const MESSAGES = [
   "안녕하세요! 👋",
