@@ -8,8 +8,26 @@ import ittripThumb from "../css/img/project/ittrip.jpg";
 import movieThumb from "../css/img/project/movie.jpg";
 import iwcThumb from "../css/img/project/iwc.jpg";
 import masilThumb from "../css/img/project/masil.jpg";
+import maumsarangThumb from "../css/img/project/maumsarang.jpg";
 
 const projects = [
+  {
+    title: "마음사랑 서비스 리뉴얼 (실무)",
+    period: "회사 프로젝트 · 2025.11 ~ 진행 중",
+    summary: "레거시 Classic ASP 시스템을 React/TypeScript + Node.js(Fastify)로 점진 이관",
+    details: [
+      "워크샵·강사 관리 시스템을 React 19 + TS + TanStack Query로 리뉴얼 (강사 등록·인증 플로우, 수강생 엑셀 검증 등 주도)",
+      "관리자 백엔드를 Fastify + MSSQL API로 이관 — 기존 ASP와 처리 결과 정합성 유지가 핵심",
+      "TossPayments·ECount ERP·알림톡/SMS 등 다수 외부 시스템 연동 및 운영 이슈 대응",
+      "Docker + GitHub Actions + AWS ECS(Fargate) 자동 배포 환경에서 개발",
+    ],
+    skills: "React, TypeScript, Vite, TanStack Query, Zustand, Node.js, Fastify, MSSQL, AWS(ECS·S3), Docker",
+    thumb: maumsarangThumb,
+    pdf: null,
+    url: null,
+    github: null, // 사내 private 저장소
+    readme: "maumsarang-README.md",
+  },
   {
     title: "Masil (렌탈 마켓 플랫폼)",
     period: "팀 프로젝트",
