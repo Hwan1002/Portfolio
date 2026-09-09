@@ -76,7 +76,7 @@ const projects = [
     pdf: iwc,
     url: null, // dothome 호스팅 만료로 링크 제거
     github: null,
-    readme: null,
+    readme: "iwc-README.md",
   },
 ];
 
