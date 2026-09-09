@@ -49,22 +49,21 @@
 <div class="readLineheight">
 <b>"ASP 관리자 페이지의 로직을 Fastify API로, 결과는 완전히 동일하게"</b><br/>
 <ul>
-    <li>주문·발송·운송장, 검사지(MMPI-3 등) 발주, 회원 관리, 캐시 양수도, 견적서, 알림톡/SMS/메일 발송 등 운영 전반의 API 개발</li>
-    <li>결제(TossPayments) · ERP 전표(ECount) · 문자/메일(NHN Cloud) 등 <b>다수의 외부 시스템 연동</b> 및 장애 대응</li>
-    <li>MSSQL 커넥션 풀과 트랜잭션 기반으로 대량 일괄처리(주문·운송장 업로드) 로직 구현</li>
+    <li>주문·배송, 발주, 회원, 정산, 견적, 메시지 발송 등 운영 전반의 API 개발</li>
+    <li>결제 · ERP · 문자/메일 발송 등 <b>다수의 외부 시스템 연동</b> 및 운영 이슈 대응</li>
+    <li>MSSQL 커넥션 풀과 트랜잭션 기반으로 대량 일괄처리 로직 구현</li>
 </ul>
 </div>
 <br/>
 
-<h4 style="color:black; background-color:white; margin:0; padding:0;">🔧 기억에 남는 트러블슈팅</h4>
+<h4 style="color:black; background-color:white; margin:0; padding:0;">🔧 이런 문제들을 해결했습니다</h4>
 
 <div class="readLineheight">
   <ul>
-    <li><b>일괄처리 15초 타임아웃</b> — 트랜잭션 도중 별도 세션으로 조회가 섞여 락 대기가 발생하던 것을 트랜잭션 세션으로 통일해 해결</li>
-    <li><b>ERP 전표 분리 오류</b> — 문화비 소득공제 대상/비대상 상품이 단일 전표로 합쳐지던 조회 쿼리 누락을 찾아 정합성 복구</li>
-    <li><b>DB 드라이버 타입 바인딩</b> — int 컬럼을 VarChar로 바인딩해 발생하던 EPARAM 오류를 추적해 반복 패턴으로 정리·수정</li>
-    <li><b>외부 API 지원 종료 대응</b> — SMS API 구 도메인 종료를 환경변수 기반 전환으로 무중단 대응</li>
-    <li><b>외부 ERP 레이트리밋</b> — 일괄 주문등록 시 412 차단에 재시도·백오프 로직으로 안정화</li>
+    <li>대량 일괄처리에서 발생하던 <b>타임아웃 문제</b>를 DB 트랜잭션 구조 개선으로 해결</li>
+    <li>레거시와 신규 시스템 간 <b>처리 결과 불일치</b>를 추적해 정합성 복구</li>
+    <li>외부 연동 API의 <b>정책 변경·지원 종료</b>에 무중단으로 대응</li>
+    <li>외부 API 호출 제한(레이트리밋)에 <b>재시도·백오프</b> 로직으로 안정화</li>
   </ul>
 </div>
 <br/>

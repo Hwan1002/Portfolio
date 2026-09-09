@@ -18,7 +18,7 @@ const projects = [
     details: [
       "워크샵·강사 관리 시스템을 React 19 + TS + TanStack Query로 리뉴얼 (강사 등록·인증 플로우, 수강생 엑셀 검증 등 주도)",
       "관리자 백엔드를 Fastify + MSSQL API로 이관 — 기존 ASP와 처리 결과 정합성 유지가 핵심",
-      "TossPayments·ECount ERP·알림톡/SMS 등 다수 외부 시스템 연동 및 운영 이슈 대응",
+      "결제·ERP·메시징 등 다수 외부 시스템 연동 및 운영 이슈 대응",
       "Docker + GitHub Actions + AWS ECS(Fargate) 자동 배포 환경에서 개발",
     ],
     skills: "React, TypeScript, Vite, TanStack Query, Zustand, Node.js, Fastify, MSSQL, AWS(ECS·S3), Docker",
