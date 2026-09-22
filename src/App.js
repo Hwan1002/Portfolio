@@ -11,7 +11,7 @@ import Career from "./component/Career";
 import Footer from "./component/Footer";
 import ScrollTopButton from "./component/ScrollTopButton";
 import { scrollToSection } from "./utils/scroll";
-//1
+
 const FULL_TITLE = "장환석 포트폴리오";
 
 function App() {
