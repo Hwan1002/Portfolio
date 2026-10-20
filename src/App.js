@@ -13,7 +13,7 @@ import ScrollTopButton from "./component/ScrollTopButton";
 import { scrollToSection } from "./utils/scroll";
 
 const FULL_TITLE = "장환석 포트폴리오";
-//1111111111111111111111111111111111
+//111111111111111111111111111111111
 function App() {
   const [typedTitle, setTypedTitle] = useState("");
 
